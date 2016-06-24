@@ -11,6 +11,7 @@ if [ -n "$version" ]; then
 		read folder_name
 		cd /
 		cd /var/www/html
+		composer global require "laravel/installer"
 		composer create-project laravel/laravel "$folder_name" 4.2 --prefer-dist
 		cd "$folder_name/"
 		chmod -R 777 public/
@@ -25,6 +26,7 @@ if [ -n "$version" ]; then
 		if [ -n "$folder_name" ]; then
 			cd /
 			cd /var/www/html
+			composer global require "laravel/installer"
 			composer create-project laravel/laravel $folder_name "5.1.*"
 			cd "$folder_name/"
 			chmod -R 777 public/
@@ -34,6 +36,7 @@ if [ -n "$version" ]; then
 		else
 			cd /
 			cd /var/www/html
+			composer global require "laravel/installer"
 			composer create-project laravel/laravel fresh_laravel$timestamp "5.1.*"
 			#laravel new "fresh_laravel$timestamp"
 			cd "fresh_laravel$timestamp/"
@@ -54,6 +57,7 @@ else
 			cd /
 			cd /var/www/html
 			#laravel new "$folder_name"
+			composer global require "laravel/installer"
 			composer create-project laravel/laravel $folder_name "5.1.*"
 			cd "$folder_name/"
 			chmod -R 777 public/
@@ -64,6 +68,7 @@ else
 			cd /
 			cd /var/www/html
 			#laravel new "fresh_laravel$timestamp"
+			composer global require "laravel/installer"
 			composer create-project laravel/laravel fresh_laravel$timestamp "5.1.*"
 			cd "fresh_laravel$timestamp/"
 			chmod -R 777 public/
