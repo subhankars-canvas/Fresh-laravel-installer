@@ -1,6 +1,6 @@
 # Fresh-laravel-installer v1.0 Stable
 #this is a bash command which is kind of time saver for laravel developers and heaven command who are/ is starting developing laravel but confused about how to install this and how this works.
-
+NOTE: <b>KEEP IT IN YOUR MIND THAT PHP MCRYPT IS INSTALLED ELSE YOU NEED TO INSTALL AND ACTIVATE IT BECAUSE LARAVEL 4 USE PHP MCRYPT.
 1.<b>open your terminal and type sudo -i  <br/>
 2. then it will ask you for your system passowrd put that and become sudo user <br>
 3. after that download code from this repo <br>
