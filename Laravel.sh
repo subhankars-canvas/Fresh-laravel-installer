@@ -9,15 +9,27 @@ if [ -n "$version" ]; then
 		echo "I m gonna install laravel 4.2 in ur fucking machine"
 		echo -n "what should be the project folder name? [ENTER] :"
 		read folder_name
-		cd /
-		cd /var/www/html
-		composer global require "laravel/installer"
-		composer create-project laravel/laravel "$folder_name" 4.2 --prefer-dist
-		cd "$folder_name/"
-		chmod -R 777 public/
-		chmod -R 777 bootstrap/
-		chmod -R 777 app/storage/
-		echo "hey ! your laravel 4. set up is done open localhost/$folder_name/public"
+		if [ -n "$folder_name" ]; then
+			cd /
+			cd /var/www/html
+			composer global require "laravel/installer"
+			composer create-project laravel/laravel "$folder_name" 4.2 --prefer-dist
+			cd "$folder_name/"
+			chmod -R 777 public/
+			chmod -R 777 bootstrap/
+			chmod -R 777 app/storage/
+			echo "hey ! your laravel 4. set up is done open localhost/$folder_name/public"
+		else
+			cd /
+			cd /var/www/html
+			composer global require "laravel/installer"
+			composer create-project laravel/laravel fresh_laravel4$timestamp 4.2 --prefer-dist
+			cd "fresh_laravel4$timestamp/"
+			chmod -R 777 public/
+			chmod -R 777 bootstrap/
+			chmod -R 777 app/storage/
+			echo "hey ! your laravel 4. set up is done open localhost/fresh_laravel4$timestamp/public"
+		fi
 	else
 		echo "well user I m smart enough to find ur name as well"
 		echo "I m gonna install laravel 5.1 in ur fucking machine"
